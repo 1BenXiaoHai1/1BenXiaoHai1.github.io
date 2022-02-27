@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://1BenXiaoHai1.github.io</id>
     <title>BenXiaoHai</title>
-    <updated>2022-02-27T16:11:18.020Z</updated>
+    <updated>2022-02-27T16:12:32.789Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://1BenXiaoHai1.github.io"/>
     <link rel="self" href="https://1BenXiaoHai1.github.io/atom.xml"/>
@@ -46,6 +46,26 @@
 <h3 id=""></h3>
 <!-- more -->
 <p>##First Blog</p>
+<h1 id="库">库</h1>
+<ul>
+<li>
+<p><strong>Math库</strong></p>
+<ul>
+<li>
+<p><strong>pow函数</strong></p>
+<p><strong>pow(x,y[,z])</strong> 同x**y%z，常省略z,用于计算x的y次方</p>
+</li>
+<li>
+<p>factorial函数——求阶乘</p>
+<p>Return <em>x</em> factorial as an integer. Raises <a href="https://docs.python.org/3/library/exceptions.html#ValueError"><code>ValueError</code></a> if <em>x</em> is not integral or is negative.</p>
+</li>
+<li>
+<p>fabs函数——求绝对值</p>
+<p>Return the absolute value of <em>x</em>.</p>
+</li>
+</ul>
+</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
