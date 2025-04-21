@@ -1,15 +1,15 @@
-name: "1BenXiaohai1's blog"
-description: "1BenXiaohai1的个人技术博客"
+name: "BenXiaohai's blog"
+description: "笨小孩的个人技术博客"
 
 avatar: https://1BenXiaoHai1.github.io/images/avatar.jpg
 favicon: https://1BenXiaoHai1.github.io/images/favicon.ico
 
 navigation:
-  - name: 首页
+  - name: Home
     url: /
-  - name: 关于
+  - name: About
     url: /about
-  - name: 分类
+  - name: Categories
     url: /tags
 
 paginate: 8
