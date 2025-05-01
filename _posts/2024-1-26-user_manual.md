@@ -4,7 +4,7 @@ title: "用户手册"
 date:   2024-1-26
 tags: [notice]
 comments: true
-author: pianfan
+author: 1BenXiaohai1
 ---
 
 您是第一次来到我的博客吗？来瞧瞧这篇博主为读者们精心准备的无比简短的《用户手册》吧！预祝您在我的博客里收获一个良好的阅读体验！

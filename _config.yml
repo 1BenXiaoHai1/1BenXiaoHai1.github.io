@@ -1,4 +1,4 @@
-name: "BenXiaohai's blog"
+name: "1BenXiaohai1's blog"
 description: "笨小孩的个人技术博客"
 
 avatar: https://1BenXiaoHai1.github.io/images/avatar.jpg
@@ -17,7 +17,7 @@ paginate: 8
 excerpt_separator: <!-- more -->
 
 footer-links:
-  zhihu: 
+  zhihu: https://www.zhihu.com/people/yi-ge-you-qu-de-ling-hun-43
   email: 1987884531@qq.com
   facebook:
   github: 1BenXiaoHai1
