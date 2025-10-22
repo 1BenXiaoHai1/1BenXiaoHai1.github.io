@@ -1,24 +1,15 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
 <head>
-  <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.ico">
-  <link rel="icon" href="/images/favicon.ico">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="BenXiaoHai">
-  <meta name="keywords" content="">
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="BenXiaoHai">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="BenXiaoHai">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
     <meta name="description" content="你要知道梨子的滋味，就得亲口吃一吃。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《毛泽东选集》-实践论">
@@ -26,703 +17,889 @@
 <meta property="og:site_name" content="BenXiaoHai">
 <meta property="og:description" content="你要知道梨子的滋味，就得亲口吃一吃。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://1benxiaohai1.github.io/images/Reading/%E5%AE%9E%E8%B7%B5%E8%AE%BA.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/Reading/%E6%90%9E%E7%A7%91%E7%A0%94.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/Reading/%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/Reading/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png">
 <meta property="article:published_time" content="2025-07-08T11:12:03.000Z">
-<meta property="article:modified_time" content="2025-09-16T04:52:31.573Z">
+<meta property="article:modified_time" content="2025-10-22T06:55:24.412Z">
 <meta property="article:author" content="BenXiaoHai">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://1benxiaohai1.github.io/images/Reading/%E5%AE%9E%E8%B7%B5%E8%AE%BA.png">
-  
-  
-  
-  <title>《毛泽东选集》-实践论 - BenXiaoHai</title>
+<meta property="article:tag" content="Reading">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1benxiaohai1.github.io/images/Reading/%E6%90%9E%E7%A7%91%E7%A0%94.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/images/assets/favicon.ico">
+    <title>《毛泽东选集》-实践论 · BenXiaoHai</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
 
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
 
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
 
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
 
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
 
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-  
-<link rel="stylesheet" href="/css/custom.css">
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"1benxiaohai1.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
 
+    body {
+        margin: 0;
+    }
 
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
 
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
 
-<body>
-  
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
 
-  <header>
-    
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>BenXiaoHai</strong>
-    </a>
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archive</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Category</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
     </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/images/background.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="《毛泽东选集》-实践论"></span>
-          
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
         </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-08 19:12" pubdate>
-          2025年7月8日 晚上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          5.4k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          46 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
     </div>
-  </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">Hello World.</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">Hello World.</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">《毛泽东选集》-实践论</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/images/assets/bg_post.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                《毛泽东选集》-实践论
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="Reading">Reading</a>
 </div>
 
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">5.4k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2025/07/08</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
 </div>
 
-  </header>
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
 
-  <main>
-    
-      
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
 
-    </div>
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">《毛泽东选集》-实践论</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <h1 id="实践论读后感"><a href="#实践论读后感" class="headerlink" title="实践论读后感"></a>实践论读后感</h1><p>实践论中说”通过实践而发现真理，又通过实践而证实真理和发展真理。从感性认识而能动地发展到理性认识，又从理性认识而能动地指导革命实践，改造主观世界和客观世界。实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。“这是实践和认识的辩证统一关系。可以说，一切技能的培养，都逃不掉这个法则。</p>
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="实践论读后感">实践论读后感</h1>
+<p>实践论中说”通过实践而发现真理，又通过实践而证实真理和发展真理。从感性认识而能动地发展到理性认识，又从理性认识而能动地指导革命实践，改造主观世界和客观世界。实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。“这是实践和认识的辩证统一关系。可以说，一切技能的培养，都逃不掉这个法则。</p>
 <p>毛举了个具体的例子”常常听到一些同志在不能勇敢接受工作任务时说出来的一句话：没有把握。为什么没有把握呢？因为他对于这项工作的内容和环境没有规律性的了解，或者他从来就没有接触过这类工作，或者接触得不多，因而无从谈到这类工作的规律性。及至把工作的情况和环境给以详细分析之后，他就觉得比较地有了把握，愿意去做这项工作。如果这个人在这项工作中经过了一个时期，他有了这项工作的经验了，而他又是一个肯虚心体察情况的人，不是一个主观地、片面地、表面地看问题的人，他就能够自己做出应该怎样进行工作的结论，他的工作勇气也就可以大大地提高了。只有那些主观地、片面地和表面地看问题的人，跑到一个地方，不问环境的情况，不看事情的全体（事情的历史和全部现状），也不触到事情的本质（事情的性质及此一事情和其他事情的内部联系），就自以为是地发号施令起来，这样的人是没有不跌交子的“。很真实，也很亲切反映了我们在面对未知事物时的那种恐惧，点出了产生这种恐惧的问题所在。</p>
 <p>个人觉得AI模型的基本训练流程、搞科研的基本流程、学习的基本流程与实践论的有异曲同工之妙。简直就是实践论的具体体现。</p>
-<p><img src="/images/Reading/%E6%90%9E%E7%A7%91%E7%A0%94.png" srcset="/img/loading.gif" lazyload alt="搞科研的基本流程（来自GAMES202）"></p>
-<h2 id="1-认识的来源"><a href="#1-认识的来源" class="headerlink" title="1.认识的来源"></a>1.认识的来源</h2><p>实践是认识的基础，是认识的来源。</p>
-<h4 id="1-1实践第一性原理"><a href="#1-1实践第一性原理" class="headerlink" title="1.1实践第一性原理"></a>1.1实践第一性原理</h4><p><strong>物质生产活动是人类最基本的实践活动，构成全部社会生活和认识活动的基础</strong>。人类的生产活动是最基本的实践活动，是决定其他一切活动的东西。一切这些知识，离开生产活动是不能得到的。</p>
+<figure>
+<img src="/images/Reading/搞科研.png" alt="搞科研的基本流程（来自GAMES202）">
+<figcaption aria-hidden="true">搞科研的基本流程（来自GAMES202）</figcaption>
+</figure>
+<h2 id="认识的来源">认识的来源</h2>
+<p>实践是认识的基础，是认识的来源。</p>
+<h4 id="实践第一性原理">实践第一性原理</h4>
+<p><strong>物质生产活动是人类最基本的实践活动，构成全部社会生活和认识活动的基础</strong>。人类的生产活动是最基本的实践活动，是决定其他一切活动的东西。一切这些知识，离开生产活动是不能得到的。</p>
 <ul>
 <li><strong>“物质生产活动是最基本的实践活动”</strong>：人类通过劳动改造自然，创造物质财富以满足生存和发展需要的基本实践活动。本质上是为了解决人类人类衣食住行等基本生存需求。只有满足了基本需求，人才可以谈其他。</li>
 <li><strong>“构成全部社会生活”</strong>：即人们首先必须吃、喝、住、穿这些最基本的，然后才能谈从事政治、科学、艺术、宗教等等。</li>
 <li><strong>”认识活动的基础“</strong>：人通过物质的生产活动，逐渐地了解自然的现象、自然的性质、自然的规律性、人和自然的关系，形成了一套方法论；而且经过生产活动，也在各种不同程度上逐渐地认识了人和人的一定的相互关系。</li>
 </ul>
-<p>个人总结了一套进步公式，如下所示。<br>$$<br>\text{有效进步} &#x3D; \frac{T_{训练时间} \times E_{个人参与度}}{M_{盲目重复系数}} \times \eta_{神经效率}<br>$$</p>
+<p>个人总结了一套进步公式，如下所示。</p>
+<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.272ex;" xmlns="http://www.w3.org/2000/svg" width="44.07ex" height="5.571ex" role="img" focusable="false" viewBox="0 -1458.2 19478.8 2462.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">有</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">效</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">进</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">步</text></g><g data-mml-node="mo" transform="translate(4277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(5333.6,0)"><g data-mml-node="mrow" transform="translate(220,778.2)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="TeXAtom" transform="translate(617,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">训</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">练</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">间</text></g></g></g><g data-mml-node="mo" transform="translate(3717.6,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msub" transform="translate(4717.9,0)"><g data-mml-node="mi"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="TeXAtom" transform="translate(771,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">个</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">人</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">参</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">与</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">度</text></g></g></g></g><g data-mml-node="msub" transform="translate(2109.4,-686)"><g data-mml-node="mi"><path data-c="1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"></path></g><g data-mml-node="TeXAtom" transform="translate(1003,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">盲</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">目</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">重</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">复</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g></g></g><rect width="9274.4" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(15070.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msub" transform="translate(16070.4,0)"><g data-mml-node="mi"><path data-c="1D702" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q156 442 175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336V326Q503 302 439 53Q381 -182 377 -189Q364 -216 332 -216Q319 -216 310 -208T299 -186Q299 -177 358 57L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="TeXAtom" transform="translate(530,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">神</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">经</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">效</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">率</text></g></g></g></g></g></svg></mjx-container></span></p>
 <ul>
 <li><strong>T</strong>：<strong>Time训练时间</strong>，代表个人在某项技能或知识上实际投入的时间总量。比如学习一门语言，就是累计投入的学习小时数。</li>
 <li><strong>E</strong>：<strong>Engagement参与度</strong>，即你对这件事情在训练时的专注程度和发挥的自己主观能动性的程度。高参与度意味着全身心投入、主动思考的状态，低参与度则可能是心不在焉的机械练习。</li>
-<li><strong>M</strong>： <strong>Mindless Repetition Coefficient</strong>，${盲目重复系数} &#x3D; 1 + \frac{\text{未纠正错误数}}{\text{总尝试数}}$。这个系数衡量的是训练质量，数值越大说明机械重复的比例越高，缺少反思和改进。也就是自己的反思，不要不动脑子，做盲目地机械运动。</li>
+<li><strong>M</strong>： <strong>Mindless Repetition
+Coefficient</strong>，<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -1.158ex;" xmlns="http://www.w3.org/2000/svg" width="31.083ex" height="3.447ex" role="img" focusable="false" viewBox="0 -1011.8 13738.6 1523.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">盲</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">目</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">重</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">复</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g></g><g data-mml-node="mo" transform="translate(6277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(7333.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(8055.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mfrac" transform="translate(9056,0)"><g data-mml-node="mtext" transform="translate(220,481.4) scale(0.707)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">未</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">纠</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">正</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">错</text><text data-variant="normal" transform="translate(4000,0) scale(1,-1)" font-size="884px" font-family="serif">误</text><text data-variant="normal" transform="translate(5000,0) scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mtext" transform="translate(927.1,-370.3) scale(0.707)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">总</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">尝</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">试</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">数</text></g><rect width="4442.6" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span>。这个系数衡量的是训练质量，数值越大说明机械重复的比例越高，缺少反思和改进。也就是自己的反思，不要不动脑子，做盲目地机械运动。</li>
 <li><strong>η</strong>：<strong>Efficiency神经效率</strong>，即对事物的认知，也就是能不能快速找到问题所在，体现的是个体对特定领域的认知效率。个人觉得虽然存在天赋差异，但每个人在不同领域的神经效率各不相同，关键在于培养快速定位问题核心的能力。</li>
 </ul>
 <blockquote>
 <p>就比如打篮球。作为一个新手，你想提高自己的篮球水平，通过看视频、看集锦根本不可能提高你的篮球水平，只能提升你对篮球的审美水平。你要想提高自己的篮球水平，你就得踏踏实实地去练，去拍球。拍球之后发现自己的水平弱，才需要分析自己的问题，问题越具体越好，然后带着你的问题，去看教学视频。看完教学视频之后，再根据教学视频内容去指导自己去练。然后再看再练再改，直至你自己的水平达到自己的预期。</p>
 </blockquote>
-<h4 id="1-2认识的发展规律"><a href="#1-2认识的发展规律" class="headerlink" title="1.2认识的发展规律"></a>1.2认识的发展规律</h4><p>人类社会的生产活动，是一步又一步地由低级向高级发展，因此，人们的认识也都是一步又一步地<strong>由低级向高级发展</strong>，即<strong>由浅入深，由片面到更多的方面</strong>。</p>
+<h4 id="认识的发展规律">认识的发展规律</h4>
+<p>人类社会的生产活动，是一步又一步地由低级向高级发展，因此，人们的认识也都是一步又一步地<strong>由低级向高级发展</strong>，即<strong>由浅入深，由片面到更多的方面</strong>。</p>
 <blockquote>
 <p>继续举打篮球这个例子。随着你打球时间的越来越多（实践，生产活动），你逐渐掌握了篮球中的一些基本功。但是，你也许会发现自己的水平到平台期了。为什么？是因为你自己对篮球的认知没跟上，一直在原地踏步。你不知道当前自己的问题出现在哪里了。这时候，只有通过不断反思自己，找到自己的问题(然而我个人觉得最难的一步就是这里，找到自己的问题，我觉得这需要做到对自己实事求是)，才能去学习更高阶的技术，也就是提升自己对篮球的认知，你才能将自己的水平迈入下一个阶段。</p>
 </blockquote>
-<h4 id="1-3真理检验标准"><a href="#1-3真理检验标准" class="headerlink" title="1.3真理检验标准"></a>1.3真理检验标准</h4><p>只有在社会实践过程中（物质生产过程中，阶级斗争过程中，科学实验过程中），人们<strong>达到了思想中所预想的结果</strong>时，人们的认识才被证实了。</p>
+<h4 id="真理检验标准">真理检验标准</h4>
+<p>只有在社会实践过程中（物质生产过程中，阶级斗争过程中，科学实验过程中），人们<strong>达到了思想中所预想的结果</strong>时，人们的认识才被证实了。</p>
 <p>人们要想得到工作的胜利即得到预想的结果，<strong>一定要使自己的思想合于客观外界的规律性</strong>，如果不合，就会在实践中失败。人们经过失败之后，也就从失败取得教训，改正自己的思想使之适合于外界的规律性，人们就能变失败为胜利，所谓“失败者成功之母”，“吃一堑长一智”，就是这个道理。</p>
 <blockquote>
 <p>就如同机器学习中的loss函数的计算一样，需要将我们的预测值与真实值（真理）做比较，得出是否达到了真实值，然后根据我们的loss损失，去反向传播（反思，改正自己的思想），更新我们的参数，调整我们的方法，补充我们对问题所缺少的认知。</p>
 <p>再继续讲打篮球的例子，假如说，我是一个打篮球的新手，然后我对自己的目标是大风车扣篮。这样的目标对于现在的我来说，太过于高，让现在的我去直接大风车扣篮，是不符合客观规律的，不符合当前的我的个人能力的。因此，需要学会分解目标。将大目标分解为多个阶段的小目标。这样即利于实践，也符合客观规律。我不会因为多次失败的尝试，持续看不到正反馈而气馁（符合客观规律）。</p>
 </blockquote>
-<h2 id="2-认识发展的辩证过程"><a href="#2-认识发展的辩证过程" class="headerlink" title="2.认识发展的辩证过程"></a>2.认识发展的辩证过程</h2><h3 id="2-1认识的两个阶段及二者的关系"><a href="#2-1认识的两个阶段及二者的关系" class="headerlink" title="2.1认识的两个阶段及二者的关系"></a>2.1认识的两个阶段及二者的关系</h3><h4 id="感性认识阶段"><a href="#感性认识阶段" class="headerlink" title="感性认识阶段"></a>感性认识阶段</h4><p>人在实践过程中，开始只是看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系。这叫做认识的感性阶段，就是感觉和印象的阶段。即作用于人的感官，引起了他们的感觉，在他们的脑子中生起了许多的印象，以及这些印象间的大概的外部的联系，这是认识的第一个阶段。在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论。</p>
+<h2 id="认识发展的辩证过程">认识发展的辩证过程</h2>
+<h3 id="认识的两个阶段及二者的关系">认识的两个阶段及二者的关系</h3>
+<h4 id="感性认识阶段">感性认识阶段</h4>
+<p>人在实践过程中，开始只是看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系。这叫做认识的感性阶段，就是感觉和印象的阶段。即作用于人的感官，引起了他们的感觉，在他们的脑子中生起了许多的印象，以及这些印象间的大概的外部的联系，这是认识的第一个阶段。在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论。</p>
 <ul>
 <li><strong>感性认识阶段的特征</strong>：感知事物的表象、片面和外部联系（如观察现象）。只是一种感觉、印象，尚未形成深刻的概念。</li>
-<li><strong>感性认识的局限性</strong>：零散、表面化（”只见树木不见森林”）。只能把握表面现象，无法揭示事物的本质规律，缺少灵活性。</li>
+<li><strong>感性认识的局限性</strong>：零散、表面化（“只见树木不见森林”）。只能把握表面现象，无法揭示事物的本质规律，缺少灵活性。</li>
 </ul>
 <blockquote>
 <p>比如练习篮球动作，所谓感性认识，就是只是粗略地模仿动作。这样可能只有动作的形，而没有动作的神。这也就是很多人感觉自己做的挺好的，但老总是感觉没那味。究其原因，还是没有真正理解动作。随着做动作做的多了，才会发现一个动作的组成，是身体重心、脚步、肩膀、甚至眼神的联动。这时候才达到了对动作本身的理性认识，明白了自己为什么动作没那味。</p>
 </blockquote>
-<h4 id="理性认识阶段"><a href="#理性认识阶段" class="headerlink" title="理性认识阶段"></a>理性认识阶段</h4><p>社会实践的继续，使人们在实践中引起感觉和印象的东西反复了多次，于是在人们的脑子里生起了一个认识过程中的突变（即飞跃），产生了概念。概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。概念同感觉，不但是数量上的差别，而且有了性质上的差别。循此继进，使用判断和推理的方法，就可产生出合乎论理的结论来，可以解释感性认识中的现象。这是认识的第二个阶段，也就是理性认识的阶段。</p>
+<h4 id="理性认识阶段">理性认识阶段</h4>
+<p>社会实践的继续，使人们在实践中引起感觉和印象的东西反复了多次，于是在人们的脑子里生起了一个认识过程中的突变（即飞跃），产生了概念。概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。概念同感觉，不但是数量上的差别，而且有了性质上的差别。循此继进，使用判断和推理的方法，就可产生出合乎论理的结论来，可以解释感性认识中的现象。这是认识的第二个阶段，也就是理性认识的阶段。</p>
 <ul>
-<li><strong>理性认识的形成机制</strong>：<ul>
+<li><strong>理性认识的形成机制</strong>：
+<ul>
 <li>对大量感性材料进行”去粗取精、去伪存真”的加工。</li>
 <li>通过概念→判断→推理形成理论体系</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>理性认识阶段的特征</strong>：把握本质、规律和内部联系（如总结物理定律），能够解释感性认识的现象。</li>
 </ul>
 <blockquote>
 <p>机器学习的训练过程中，迭代轮次是一个很关键的变量。训练10次和训练1000次的模型效果完全不同。这就是因为随着训练的次数多了，真理loss对于”模型的认识“检验多了，反向传播多了，导致”模型的认识“越接近那个判断标准真理本身（理性认识，模型变得越来越理性）。因此模型的效果就好了。</p>
 </blockquote>
-<h4 id="认识的两次飞跃"><a href="#认识的两次飞跃" class="headerlink" title="认识的两次飞跃"></a>认识的两次飞跃</h4><p>感性认识是基础，但必须上升到理性认识，才能真正指导实践。</p>
+<h4 id="认识的两次飞跃">认识的两次飞跃</h4>
+<p>感性认识是基础，但必须上升到理性认识，才能真正指导实践。</p>
 <p><strong>第一次飞跃</strong>：从感性认识到理性认识（认知的质变），形成理论。</p>
 <ul>
-<li><strong>第一次飞跃的特点</strong>：<ul>
+<li><strong>第一次飞跃的特点</strong>：
+<ul>
 <li><strong>从现象到本质</strong>：将感官获取的碎片化信息（如苹果下落）升华为普遍规律（万有引力定律）。</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p><strong>第二次飞跃</strong>：从理性认识到实践（真理的验证），理论用来指导实践。</p>
 <ul>
-<li><strong>第二次飞跃的特点</strong>：<ul>
-<li><strong>能够解决具体问题</strong>：将理性认识（理论&#x2F;方案）灵活应用，转化为可操作的实践程序，解决具体的问题。</li>
+<li><strong>第二次飞跃的特点</strong>：
+<ul>
+<li><strong>能够解决具体问题</strong>：将理性认识（理论/方案）灵活应用，转化为可操作的实践程序，解决具体的问题。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="两种错误认识的批判"><a href="#两种错误认识的批判" class="headerlink" title="两种错误认识的批判"></a>两种错误认识的批判</h4><p><strong>对”唯理论者“的批判</strong>：唯理论者只承认理性的实在性，不承认经验的实在性，以为只有理性靠得住，而感觉的经验是靠不住的，这一派的错误在于颠倒了事实。理性的东西所以靠得住，正是由于它来源于感性，否则理性的东西就成了无源之水，无本之木，而只是主观自生的靠不住的东西了。换句话说就是分析来分析去不知道在分析啥，瞎分析。没有具体的含义和作用，纯理论学家，纸上谈兵罢了。</p>
+<h4 id="两种错误认识的批判">两种错误认识的批判</h4>
+<p><strong>对”唯理论者“的批判</strong>：唯理论者只承认理性的实在性，不承认经验的实在性，以为只有理性靠得住，而感觉的经验是靠不住的，这一派的错误在于颠倒了事实。理性的东西所以靠得住，正是由于它来源于感性，否则理性的东西就成了无源之水，无本之木，而只是主观自生的靠不住的东西了。换句话说就是分析来分析去不知道在分析啥，瞎分析。没有具体的含义和作用，纯理论学家，纸上谈兵罢了。</p>
 <p><strong>对”经验论者“的批判</strong>：只有感性认识，没有发展为理性认识，认为理性认识不可靠，肤浅的经验主义。做事情全凭感觉，只有事情的客观条件基本与上次的一致，事情才有可能成功。剩下的时候完全靠天吃饭，纯靠运气。这种理论的错误，在于不知道感觉材料固然是客观外界某些真实性的反映，但它们仅是片面的和表面的东西，这种反映是不完全的，是没有反映事物本质的。</p>
-<h4 id="两个阶段的辩证关系"><a href="#两个阶段的辩证关系" class="headerlink" title="两个阶段的辩证关系"></a>两个阶段的辩证关系</h4><p>在低级阶段，认识表现为感性的，在高级阶段，认识表现为论理的，但任何阶段，都是统一的认识过程中的阶段。感性和理性二者的性质不同，但又不是互相分离的，它们在实践的基础上统一起来了。</p>
+<h4 id="两个阶段的辩证关系">两个阶段的辩证关系</h4>
+<p>在低级阶段，认识表现为感性的，在高级阶段，认识表现为论理的，但任何阶段，都是统一的认识过程中的阶段。感性和理性二者的性质不同，但又不是互相分离的，它们在实践的基础上统一起来了。</p>
 <p>感觉到了的东西，我们不能立刻理解它，只有理解了的东西才更深刻地感觉它。感觉只解决现象问题，理论才解决本质问题。这些问题的解决，一点也不能离开实践。无论何人要认识什么事物，除了同那个事物接触，即生活于（实践于）那个事物的环境中，是没有法子解决的。</p>
-<h3 id="2-2如何加速感性认识转变为理性认识"><a href="#2-2如何加速感性认识转变为理性认识" class="headerlink" title="2.2如何加速感性认识转变为理性认识"></a>2.2如何加速感性认识转变为理性认识</h3><p>感性认识变为理性认识，只有通过大量实践才能获得。但是我们并没有那么多的时间和条件去直接实践，那怎么办呢？<strong>我们可以通过学习别人，阅读别人的书籍、观看别人的视频来直接提升我们的认识</strong>。因为别人的书籍、视频就是他们自己大量实践后的理性认识。我们可以直接学习别人的理性认识（方法论），来实践自己的认识从感性认识变为理性认识。</p>
+<h3 id="如何加速感性认识转变为理性认识">如何加速感性认识转变为理性认识</h3>
+<p>感性认识变为理性认识，只有通过大量实践才能获得。但是我们并没有那么多的时间和条件去直接实践，那怎么办呢？<strong>我们可以通过学习别人，阅读别人的书籍、观看别人的视频来直接提升我们的认识</strong>。因为别人的书籍、视频就是他们自己大量实践后的理性认识。我们可以直接学习别人的理性认识（方法论），来实践自己的认识从感性认识变为理性认识。</p>
 <p>一切真知都是从<strong>直接经验</strong>发源的。但人不能事事直接经验（时间上不允许），事实上多数的知识都是<strong>间接经验</strong>的东西（一切古代的和外域的知识，通过书籍、视频、文字等信息保留下来）。一个人的知识，不外直接经验的和间接经验的两部分。而且在我为间接经验者，在人则仍为直接经验。</p>
 <ul>
 <li><strong>直接经验</strong>：主体通过<strong>亲身实践</strong>获得的原初性认识。</li>
 <li><strong>间接经验</strong>：通过<strong>书本、视频</strong>等符号系统传递的派生性认识。</li>
 </ul>
-<h2 id="3-认识的最终目的：指导实践"><a href="#3-认识的最终目的：指导实践" class="headerlink" title="3.认识的最终目的：指导实践"></a>3.认识的最终目的：指导实践</h2><p>马克思主义的哲学认为十分重要的问题，不在于懂得了客观世界的规律性，因而能够解释世界，而在于拿了这种对于客观规律性的认识去能动地改造世界。</p>
+<h2 id="认识的最终目的指导实践">认识的最终目的：指导实践</h2>
+<p>马克思主义的哲学认为十分重要的问题，不在于懂得了客观世界的规律性，因而能够解释世界，而在于拿了这种对于客观规律性的认识去能动地改造世界。</p>
 <p>认识从实践始，经过实践得到了理论的认识，还须再回到实践去。认识的能动作用，不但表现于从感性的认识到理性的认识之能动的飞跃，更重要的还须表现于从理性的认识到革命的实践这一个飞跃。许多自然科学理论之所以被称为真理，不但在于自然科学家们创立这些学说的时候，而且在于为尔后的科学实践所证实的时候。</p>
 <p>当然在实践中，由于客观条件的限制，理论往往不能完全符合实际，需要在实践中调整。这也就是在不断完善理论的过程。</p>
 <blockquote>
 <p>学习的最终目的还是为了改造客观世界，生产实际价值。如果只学习，而不实践，那我们为什么要浪费时间去学那个东西？把这时间拿出来玩不好吗？所以我们是因为先有了实践，先有了想去做的事，然后去找对应的理论，去学习，去提高自己的认知。最终的目的还是要回到我们的实践。就比如说你对篮球不感兴趣，你还去逼着自己看篮球教学视频，那你不是给你自己找不愉快吗？</p>
 </blockquote>
-<h2 id="4-认识与实践的辩证统一：认识运动"><a href="#4-认识与实践的辩证统一：认识运动" class="headerlink" title="4.认识与实践的辩证统一：认识运动"></a>4.认识与实践的辩证统一：认识运动</h2><p><img src="/images/Reading/%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8.png" srcset="/img/loading.gif" lazyload alt="认识运动的基本流程"><br><img src="/images/Reading/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" srcset="/img/loading.gif" lazyload alt="机器学习的基本流程（与认识运动基本一致）"></p>
-<h3 id="4-1认识运动的基本框架"><a href="#4-1认识运动的基本框架" class="headerlink" title="4.1认识运动的基本框架"></a>4.1认识运动的基本框架</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">感性实践 → 理性抽象 → 方案制定 → 实践验证 → [目标达成]<br></code></pre></td></tr></table></figure>
-
+<h2 id="认识与实践的辩证统一认识运动">认识与实践的辩证统一：认识运动</h2>
+<p><img src="/images/Reading/认识运动.png" alt="认识运动的基本流程">
+<img src="/images/Reading/机器学习.png" alt="机器学习的基本流程（与认识运动基本一致）"></p>
+<h3 id="认识运动的基本框架">认识运动的基本框架</h3>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">感性实践 → 理性抽象 → 方案制定 → 实践验证 → [目标达成]</span><br></pre></td></tr></table></figure>
 <p>人们投身于变革在某一发展阶段内的某一客观过程的实践中，由于客观过程的反映和主观能动性的作用，使得人们的认识由感性的推移到了理性的，造成了大体上相应于该客观过程的法则性的思想、理论、计划或方案，然后再应用这种思想、理论、计划或方案于该同一客观过程的实践，如果能够实现预想的目的，即将预定的思想、理论、计划、方案在该同一过程的实践中变为事实，或者大体上变为事实，那末，对于这一具体过程的认识运动算是完成了。</p>
-<h3 id="4-2认识运动的特性"><a href="#4-2认识运动的特性" class="headerlink" title="4.2认识运动的特性"></a>4.2认识运动的特性</h3><h4 id="认识运动的动态性"><a href="#认识运动的动态性" class="headerlink" title="认识运动的动态性"></a>认识运动的动态性</h4><p>所谓认识运动的动态性就是指，由于人们受着科学条件、技术条件、客观过程的发展及其表现程度的的限制，人们客观实践的结果很可能并不符合自己的预期，因此人们就需要去<strong>动态调整自己的思想、理论、计划、方案</strong>，人们的认识很少能<strong>完全不变</strong>地实现。许多时候须反复失败过多次，才能纠正错误的认识，才能到达于和客观过程的规律性相符合，因而才能够变主观的东西为客观的东西，即在实践中得到预想的结果。</p>
-<h4 id="认识运动的永久性"><a href="#认识运动的永久性" class="headerlink" title="认识运动的永久性"></a>认识运动的永久性</h4><p>认识运动的永久性是指，随着自然界和社会的发展<strong>不断变化，向前推移</strong>（内部矛盾推动），人们的认识运动也应跟着推移和发展。人们的认识必须<strong>与时俱进</strong>，适应新阶段的变化。人们的认识是不断更新的，认识运动是不断进行的。</p>
-<p>**真正的革命的指导者，能够及时修正错误（调整旧理论），并且能够及时更新自己的认知，适应新情况（提出新方案）。**这种人也是我想成为的那种人。</p>
-<h4 id="认识偏差的两种极端"><a href="#认识偏差的两种极端" class="headerlink" title="认识偏差的两种极端"></a>认识偏差的两种极端</h4><p><strong>右倾保守主义（保守派）</strong>：<strong>思想落后于实际</strong>，认识停滞在<strong>旧阶段</strong>，无法适应新变化。喜欢固守旧政策。</p>
+<h3 id="认识运动的特性">认识运动的特性</h3>
+<h4 id="认识运动的动态性">认识运动的动态性</h4>
+<p>所谓认识运动的动态性就是指，由于人们受着科学条件、技术条件、客观过程的发展及其表现程度的的限制，人们客观实践的结果很可能并不符合自己的预期，因此人们就需要去<strong>动态调整自己的思想、理论、计划、方案</strong>，人们的认识很少能<strong>完全不变</strong>地实现。许多时候须反复失败过多次，才能纠正错误的认识，才能到达于和客观过程的规律性相符合，因而才能够变主观的东西为客观的东西，即在实践中得到预想的结果。</p>
+<h4 id="认识运动的永久性">认识运动的永久性</h4>
+<p>认识运动的永久性是指，随着自然界和社会的发展<strong>不断变化，向前推移</strong>（内部矛盾推动），人们的认识运动也应跟着推移和发展。人们的认识必须<strong>与时俱进</strong>，适应新阶段的变化。人们的认识是不断更新的，认识运动是不断进行的。</p>
+<p><strong>真正的革命的指导者，能够及时修正错误（调整旧理论），并且能够及时更新自己的认知，适应新情况（提出新方案）。</strong>这种人也是我想成为的那种人。</p>
+<h4 id="认识偏差的两种极端">认识偏差的两种极端</h4>
+<p><strong>右倾保守主义（保守派）</strong>：<strong>思想落后于实际</strong>，认识停滞在<strong>旧阶段</strong>，无法适应新变化。喜欢固守旧政策。</p>
 <p><strong>左倾空谈主义（冒险派）</strong>：<strong>思想超过客观过程的一定发展阶段</strong>，有些把幻想看作真理，有些则把仅在将来有现实可能性的理想，勉强地放在现时来做，离开了当前大多数人的实践，离开了当前的现实性，在行动上表现为冒险主义。这些人的问题是忽略客观发展阶段的现实条件，也就是对客观现实的调查的不够充分，认不清现实。</p>
-<h4 id="真理的相对性与绝对性"><a href="#真理的相对性与绝对性" class="headerlink" title="真理的相对性与绝对性"></a>真理的相对性与绝对性</h4><p>真理是相对的，这是因为在绝对的总的宇宙发展过程中，各个具体过程的发展都是相对的，因而在绝对真理的长河中，<strong>人们对于在各个一定发展阶段上的具体过程的认识只具有相对的真理性</strong>。这是受限于客观背景历史条件。如如牛顿力学在宏观适用，但在微观需量子力学修正。</p>
+<h4 id="真理的相对性与绝对性">真理的相对性与绝对性</h4>
+<p>真理是相对的，这是因为在绝对的总的宇宙发展过程中，各个具体过程的发展都是相对的，因而在绝对真理的长河中，<strong>人们对于在各个一定发展阶段上的具体过程的认识只具有相对的真理性</strong>。这是受限于客观背景历史条件。如如牛顿力学在宏观适用，但在微观需量子力学修正。</p>
 <p>真理是绝对的，<strong>无数相对的真理之总和，就是绝对的真理</strong>。形成对物质的绝对认知，没有任何认知偏差。</p>
 <p>客观现实世界的变化运动永远没有完结，人们在实践中对于真理的认识也就永远没有完结。</p>
-<h2 id="5-结论"><a href="#5-结论" class="headerlink" title="5.结论"></a>5.结论</h2><p>这就是实践论所告诉我们的内容。知是行之始，行是知之成。学习知识，学习别人的理论也是如此，也要知道我们认识的最终目的还是要实践。学习实践论，实践实践论。</p>
+<h2 id="结论">结论</h2>
+<p>这就是实践论所告诉我们的内容。知是行之始，行是知之成。学习知识，学习别人的理论也是如此，也要知道我们认识的最终目的还是要实践。学习《实践论》，实践《实践论》。</p>
 
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>《毛泽东选集》-实践论</div>
-      <div>https://1benxiaohai1.github.io/2025/07/08/实践论/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>BenXiaoHai</div>
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://1BenXiaoHai1.github.io">BenXiaoHai</a>
+            <p>原文链接：<a href="https://1benxiaohai1.github.io/2025/07/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/">https://1benxiaohai1.github.io/2025/07/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/</a>
+            <p>发表日期：<a href="https://1benxiaohai1.github.io/2025/07/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/">July 8th 2025, 7:12:03 pm</a>
+            <p>更新日期：<a href="https://1benxiaohai1.github.io/2025/07/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/">October 22nd 2025, 2:55:24 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2025年7月8日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2025/07/09/%E5%8F%8D%E5%AF%B9%E6%9C%AC%E6%9C%AC%E4%B8%BB%E4%B9%89/" title="《毛泽东选集》-反对本本主义">
+                    <div class="nextTitle">《毛泽东选集》-反对本本主义</div>
                 </a>
-              
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2025/06/24/%E5%87%8F%E8%82%A5%E6%97%A5%E5%BF%97/" title="Fitness Log减肥日志">
+                    <div class="prevTitle">Fitness Log减肥日志</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
             
-          </div>
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+            
         </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+            <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
 
+</main>
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2025/07/09/%E5%8F%8D%E5%AF%B9%E6%9C%AC%E6%9C%AC%E4%B8%BB%E4%B9%89/" title="《毛泽东选集》-反对本本主义">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">《毛泽东选集》-反对本本主义</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2025/06/24/%E5%87%8F%E8%82%A5%E6%97%A5%E5%BF%97/" title="Fitness Log减肥日志">
-                        <span class="hidden-mobile">Fitness Log减肥日志</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
+                <!-- profile -->
             </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:1987884531@qq.com" class="iconfont-archer email" title="email" ></a>
+                <a href="https://github.com/1BenXiaoHai1" class="iconfont-archer github" target="_blank" title="github"></a>
+                <span class="iconfont-archer wechat" title="wechat">
+                    <img class="profile-qr" src="/images/assets/favicon_wechat.png" />
+                </span>
+                <a href="https://www.zhihu.com/people/yi-ge-you-qu-de-ling-hun-43" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
 
-            
-          </article>
         </div>
-      </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%E8%AE%BA%E8%AF%BB%E5%90%8E%E6%84%9F"><span class="toc-number">1.</span> <span class="toc-text">实践论读后感</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-number">1.1.</span> <span class="toc-text">认识的来源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">实践第一性原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%9A%84%E5%8F%91%E5%B1%95%E8%A7%84%E5%BE%8B"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">认识的发展规律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E7%90%86%E6%A3%80%E9%AA%8C%E6%A0%87%E5%87%86"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">真理检验标准</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E5%8F%91%E5%B1%95%E7%9A%84%E8%BE%A9%E8%AF%81%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">认识发展的辩证过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5%E5%8F%8A%E4%BA%8C%E8%80%85%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">认识的两个阶段及二者的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%9F%E6%80%A7%E8%AE%A4%E8%AF%86%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">感性认识阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86%E9%98%B6%E6%AE%B5"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">理性认识阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%9A%84%E4%B8%A4%E6%AC%A1%E9%A3%9E%E8%B7%83"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">认识的两次飞跃</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E9%94%99%E8%AF%AF%E8%AE%A4%E8%AF%86%E7%9A%84%E6%89%B9%E5%88%A4"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">两种错误认识的批判</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5%E7%9A%84%E8%BE%A9%E8%AF%81%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">两个阶段的辩证关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F%E6%84%9F%E6%80%A7%E8%AE%A4%E8%AF%86%E8%BD%AC%E5%8F%98%E4%B8%BA%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">如何加速感性认识转变为理性认识</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%9A%84%E6%9C%80%E7%BB%88%E7%9B%AE%E7%9A%84%E6%8C%87%E5%AF%BC%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.3.</span> <span class="toc-text">认识的最终目的：指导实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%9A%84%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8"><span class="toc-number">1.4.</span> <span class="toc-text">认识与实践的辩证统一：认识运动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6"><span class="toc-number">1.4.1.</span> <span class="toc-text">认识运动的基本框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.4.2.</span> <span class="toc-text">认识运动的特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8A%A8%E6%80%81%E6%80%A7"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">认识运动的动态性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%BF%90%E5%8A%A8%E7%9A%84%E6%B0%B8%E4%B9%85%E6%80%A7"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">认识运动的永久性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E5%81%8F%E5%B7%AE%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%9E%81%E7%AB%AF"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">认识偏差的两种极端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E7%90%86%E7%9A%84%E7%9B%B8%E5%AF%B9%E6%80%A7%E4%B8%8E%E7%BB%9D%E5%AF%B9%E6%80%A7"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">真理的相对性与绝对性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.5.</span> <span class="toc-text">结论</span></a></li></ol></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 7
+        </div>
+        <!-- search  -->
     </div>
-  </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span>
+            <a class="archive-post-title" href="/2025/10/21/OpenGL/">OpenGL</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/2025/10/20/GPU/">GPU</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2025/08/19/%E5%87%BA%E5%9B%BD/">参加ISMAR 2025记录</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2025/07/21/%E6%94%B9%E9%80%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0/">《毛泽东选集》-改造我们的学习</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span>
+            <a class="archive-post-title" href="/2025/07/09/%E5%8F%8D%E5%AF%B9%E6%9C%AC%E6%9C%AC%E4%B8%BB%E4%B9%89/">《毛泽东选集》-反对本本主义</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span>
+            <a class="archive-post-title" href="/2025/07/08/%E5%AE%9E%E8%B7%B5%E8%AE%BA/">《毛泽东选集》-实践论</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/24</span>
+            <a class="archive-post-title" href="/2025/06/24/%E5%87%8F%E8%82%A5%E6%97%A5%E5%BF%97/">Fitness Log减肥日志</a>
+        </li>
+            </ul>
+    </div>
 </div>
 
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="Computer Graphics API">
+                <span class="iconfont-archer">&#xe606;</span>
+                Computer Graphics API
+            </span>
+            <span class="sidebar-tag-name" data-tags="GPU">
+                <span class="iconfont-archer">&#xe606;</span>
+                GPU
+            </span>
+            <span class="sidebar-tag-name" data-tags="Life">
+                <span class="iconfont-archer">&#xe606;</span>
+                Life
+            </span>
+            <span class="sidebar-tag-name" data-tags="Reading">
+                <span class="iconfont-archer">&#xe606;</span>
+                Reading
+            </span>
     </div>
-  
-  
-  
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
 </div>
 
-  </footer>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="Life">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Life
+        </span>
+        <span class="sidebar-category-name" data-categories="Reading">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Reading
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
 
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+    </div>
+</div>
 
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
     }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
+    var siteMeta = {
+        url: "https://1BenXiaoHai1.github.io",
+        root: siteMetaRoot,
+        author: "BenXiaoHai"
+    }
 </script>
 
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
 </html>
