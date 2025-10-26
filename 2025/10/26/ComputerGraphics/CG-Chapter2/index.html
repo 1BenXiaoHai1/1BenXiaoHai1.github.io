@@ -10,20 +10,41 @@
     <meta name="copyright" content="BenXiaoHai">
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     <meta name="description" content="">
-    <meta property="og:type" content="article">
-<meta property="og:title" content="GPU">
-<meta property="og:url" content="https://1benxiaohai1.github.io/2025/10/20/GPU/index.html">
+    <meta name="description" content="线性代数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linear Algebra">
+<meta property="og:url" content="https://1benxiaohai1.github.io/2025/10/26/ComputerGraphics/CG-Chapter2/index.html">
 <meta property="og:site_name" content="BenXiaoHai">
+<meta property="og:description" content="线性代数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-20T13:36:25.000Z">
-<meta property="article:modified_time" content="2025-10-22T06:28:37.961Z">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image1.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image2.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image3.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image4.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image5.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image6.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image7.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image8.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image9.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image10.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image11.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image12.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image13.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image14.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image15.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image16.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image17.png">
+<meta property="og:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image18.png">
+<meta property="article:published_time" content="2025-10-26T13:37:26.000Z">
+<meta property="article:modified_time" content="2025-10-26T14:29:46.913Z">
 <meta property="article:author" content="BenXiaoHai">
-<meta property="article:tag" content="GPU">
+<meta property="article:tag" content="Computer Graphics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1benxiaohai1.github.io/images/ComputerGraphics/Chapter2/image1.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/images/assets/favicon.ico">
-    <title>GPU · BenXiaoHai</title>
+    <title>Linear Algebra · BenXiaoHai</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -241,7 +262,7 @@
             <a href="/">Hello World.</a>
         </div>
         <div class="post-title header-element">
-            <a href="#" class="post-name">GPU</a>
+            <a href="#" class="post-name">Linear Algebra</a>
         </div>
     </div>
 </header>
@@ -268,7 +289,7 @@
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-                GPU
+                Linear Algebra
             <!-- 404 -->
         </h1>
         <!-- 副标题 -->
@@ -280,17 +301,17 @@
             <div class="post-intros">
                 <!-- 文章页标签  -->
                     <div class="post-intro-tags" >
-        <a class="post-tag" href="javascript:void(0);" data-tags="GPU">GPU</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Computer Graphics">Computer Graphics</a>
 </div>
 
                 <!-- 文章字数统计 -->
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">0</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">335</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2025/10/20</span>
+                    <span class="post-intro-time">2025/10/26</span>
                     <!-- busuanzi -->
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                             <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
@@ -442,29 +463,74 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        
+        <h1 id="向量">向量</h1>
+<p>向量：带方向的距离，方向和长度，不关心绝对的起始位置。</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image1.png" alt="向量" style="width:70%; height:auto;" /></p>
+<h2 id="向量的长度单位向量">向量的长度&amp;单位向量</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image2.png" alt="向量的长度&单位向量" style="width:70%; height:auto;" /></p>
+<h2 id="向量的坐标形式">向量的坐标形式</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image3.png" alt="向量的坐标形式" style="width:70%; height:auto;" /></p>
+<h1 id="向量的运算">向量的运算</h1>
+<h2 id="向量加法">向量加法</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image4.png" alt="向量加法" style="width:70%; height:auto;" /></p>
+<h2 id="向量乘法点积叉积">向量乘法：点积、叉积</h2>
+<h3 id="点积">点积</h3>
+<p>点积：点积的结果是一个<strong>数</strong>。测量两个向量的接近程度、向量投影、判断向量是在前面还是后面（结果为正，同侧，在前面。结果为负，异侧，在后面）。</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image5.png" alt="向量点积" style="width:70%; height:auto;" /></p>
+<p>向量点积的坐标形式
+<img src="\images\ComputerGraphics\Chapter2\image6.png" alt="向量点积的坐标形式" style="width:70%; height:auto;" /></p>
+<p>向量投影
+<img src="\images\ComputerGraphics\Chapter2\image7.png" alt="向量投影" style="width:70%; height:auto;" /></p>
+<p>向量点积的用途
+<img src="\images\ComputerGraphics\Chapter2\image8.png" alt="向量点积的用途" style="width:70%; height:auto;" /></p>
+<h3 id="叉积">叉积</h3>
+<p>叉积：叉积的结果是一个<strong>向量</strong>，其垂直于做叉积的两个向量。叉积可以用来判断向量是在当前向量的左边还是在右边（结果朝里，说明在右边。结果朝内，说明在左边）、判断内外（光栅化的基础，对内部的点进行着色）。</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image9.png" alt="向量叉积" style="width:70%; height:auto;" /></p>
+<p>向量叉积的坐标形式</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image10.png" alt="向量叉积的坐标形式" style="width:70%; height:auto;" /></p>
+<p>判断向量与当前向量的位置关系</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image11.png" alt="判断向量与当前向量的位置关系" style="width:70%; height:auto;" /></p>
+<p>判断点与三角形的位置关系</p>
+<p><img src="\images\ComputerGraphics\Chapter2\image12.png" alt="判断点与三角形的位置关系" style="width:70%; height:auto;" /></p>
+<h1 id="矩阵">矩阵</h1>
+<p><img src="\images\ComputerGraphics\Chapter2\image13.png" alt="矩阵" style="width:70%; height:auto;" /></p>
+<p><strong>矩阵</strong>：Matrices, used to represent
+transformations。Translation, rotation, shear, scale.</p>
+<h2 id="矩阵的性质">矩阵的性质</h2>
+<ul>
+<li>不具有交换律</li>
+<li>结合律和分配律</li>
+</ul>
+<p><img src="\images\ComputerGraphics\Chapter2\image14.png" alt="矩阵的性质" style="width:70%; height:auto;" /></p>
+<h2 id="矩阵的转置">矩阵的转置</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image15.png" alt="矩阵的转置" style="width:70%; height:auto;" /></p>
+<h2 id="单位矩阵">单位矩阵</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image16.png" alt="单位矩阵" style="width:30%; height:auto;" /></p>
+<h1 id="矩阵的运算">矩阵的运算</h1>
+<h2 id="矩阵加法和缩放">矩阵加法和缩放</h2>
+<p>element by element，逐元素运算。</p>
+<h2 id="矩阵乘法">矩阵乘法</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image17.png" alt="矩阵乘法" style="width:70%; height:auto;" /></p>
+<h2 id="点积叉积的矩阵运算形式">点积&amp;叉积的矩阵运算形式</h2>
+<p><img src="\images\ComputerGraphics\Chapter2\image18.png" alt="点积&叉积的矩阵运算形式" style="width:100%; height:auto;" /></p>
 
     </article>
     <!-- license -->
         <div class="license-wrapper">
             <p>原文作者：<a href="https://1BenXiaoHai1.github.io">BenXiaoHai</a>
-            <p>原文链接：<a href="https://1benxiaohai1.github.io/2025/10/20/GPU/">https://1benxiaohai1.github.io/2025/10/20/GPU/</a>
-            <p>发表日期：<a href="https://1benxiaohai1.github.io/2025/10/20/GPU/">October 20th 2025, 9:36:25 pm</a>
-            <p>更新日期：<a href="https://1benxiaohai1.github.io/2025/10/20/GPU/">October 22nd 2025, 2:28:37 pm</a>
+            <p>原文链接：<a href="https://1benxiaohai1.github.io/2025/10/26/ComputerGraphics/CG-Chapter2/">https://1benxiaohai1.github.io/2025/10/26/ComputerGraphics/CG-Chapter2/</a>
+            <p>发表日期：<a href="https://1benxiaohai1.github.io/2025/10/26/ComputerGraphics/CG-Chapter2/">October 26th 2025, 9:37:26 pm</a>
+            <p>更新日期：<a href="https://1benxiaohai1.github.io/2025/10/26/ComputerGraphics/CG-Chapter2/">October 26th 2025, 10:29:46 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     <!-- paginator -->
     <ul class="post-paginator">
         <li class="next">
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2025/10/21/OpenGL/" title="OpenGL">
-                    <div class="nextTitle">OpenGL</div>
-                </a>
         </li>
         <li class="previous">
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2025/08/19/%E5%87%BA%E5%9B%BD/" title="参加ISMAR 2025记录">
-                    <div class="prevTitle">参加ISMAR 2025记录</div>
+                <a href="/2025/10/25/ComputerGraphics/CG-Chapter1/" title="Overview of Computer Graphics">
+                    <div class="prevTitle">Overview of Computer Graphics</div>
                 </a>
         </li>
     </ul>
@@ -520,7 +586,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">向量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">向量的长度&amp;单位向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">向量的坐标形式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">向量的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%8A%A0%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">向量加法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E4%B9%98%E6%B3%95%E7%82%B9%E7%A7%AF%E5%8F%89%E7%A7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">向量乘法：点积、叉积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E7%A7%AF"><span class="toc-number">2.2.1.</span> <span class="toc-text">点积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%89%E7%A7%AF"><span class="toc-number">2.2.2.</span> <span class="toc-text">叉积</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">3.</span> <span class="toc-text">矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.1.</span> <span class="toc-text">矩阵的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">矩阵的转置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5"><span class="toc-number">3.3.</span> <span class="toc-text">单位矩阵</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text">矩阵的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8A%A0%E6%B3%95%E5%92%8C%E7%BC%A9%E6%94%BE"><span class="toc-number">4.1.</span> <span class="toc-text">矩阵加法和缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">矩阵乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E7%A7%AF%E5%8F%89%E7%A7%AF%E7%9A%84%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E5%BD%A2%E5%BC%8F"><span class="toc-number">4.3.</span> <span class="toc-text">点积&amp;叉积的矩阵运算形式</span></a></li></ol></li></ol>
             </div>
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -540,15 +606,20 @@
         
         
         
+        
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 9
         </div>
         <!-- search  -->
     </div>
     <div class="post-archive">
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2025/10/26/ComputerGraphics/CG-Chapter2/">Linear Algebra</a>
+        </li>
         <li class="archive-post-item">
             <span class="archive-post-date">10/25</span>
             <a class="archive-post-title" href="/2025/10/25/ComputerGraphics/CG-Chapter1/">Overview of Computer Graphics</a>
@@ -559,7 +630,7 @@
         </li>
         <li class="archive-post-item">
             <span class="archive-post-date">10/20</span>
-            <a class="archive-post-title" href="/2025/10/20/GPU/">GPU</a>
+            <a class="archive-post-title" href="/2025/10/20/GPU/GodViewOfGPU/">A Notes about "The God View of GPU"</a>
         </li>
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -591,10 +662,6 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 Computer Graphics API
             </span>
-            <span class="sidebar-tag-name" data-tags="GPU">
-                <span class="iconfont-archer">&#xe606;</span>
-                GPU
-            </span>
             <span class="sidebar-tag-name" data-tags="Life">
                 <span class="iconfont-archer">&#xe606;</span>
                 Life
@@ -607,6 +674,10 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 Computer Graphics
             </span>
+            <span class="sidebar-tag-name" data-tags="GPU">
+                <span class="iconfont-archer">&#xe606;</span>
+                GPU
+            </span>
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -617,13 +688,13 @@
 
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
-        <span class="sidebar-category-name" data-categories="Reading">
-            <span class="iconfont-archer">&#xe60a;</span>
-            Reading
-        </span>
         <span class="sidebar-category-name" data-categories="Life">
             <span class="iconfont-archer">&#xe60a;</span>
             Life
+        </span>
+        <span class="sidebar-category-name" data-categories="Reading">
+            <span class="iconfont-archer">&#xe60a;</span>
+            Reading
         </span>
         <span class="sidebar-category-name" data-categories="Learning">
             <span class="iconfont-archer">&#xe60a;</span>
